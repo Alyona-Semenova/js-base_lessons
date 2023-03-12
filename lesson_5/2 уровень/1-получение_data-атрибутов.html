@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button data-id="1" data-value="btn1">Кнопка 1</button>
     <button data-id="2" data-value="btn2">Кнопка 2</button>
@@ -20,7 +22,20 @@
     -->
 
     <script>
-        
+        const buttons = document.querySelectorAll('button');
+
+
+        buttons.forEach((button) => {
+            button.onclick = (event) => {
+                // console.log(button.dataset) //выводим значения data- атрибутов
+                console.log({
+                    id: button.dataset.id,
+                    value: button.dataset.value
+                }); //для удобства чтения выведем в виде объекта
+            };
+
+        })
     </script>
 </body>
+
 </html>
