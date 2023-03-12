@@ -26,7 +26,16 @@
     -->
 
     <script>
-        
+        const button = document.querySelector('button'); // получаем элемент кнопки
+        const message = document.querySelector('.message'); // получаем элемент сообщения
+        const notification = new Audio("notification.mp3");
+
+
+        button.onclick = (event) => {
+            notification.play(); // воспроизводим аудио фрагмент 
+            message.style.top = `calc(100vh - ${message.clientHeight}px)`;
+            message.style.transform = `translateY(-10px)`
+        };
     </script>
 </body>
 
