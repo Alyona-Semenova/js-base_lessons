@@ -23,7 +23,8 @@
          * @param {number} percent величина процента от 0 до 100.
          */
         function changeProgress(percent) {
-            div.style.background = `linear-gradient(90deg, rgba(38,255,162,1) ${percent}%, rgba(255,255,255,1) ${percent}%)`;
+            div.style.background =
+                `linear-gradient(90deg, rgba(38,255,162,1) ${percent}%, rgba(255,255,255,1) ${percent}%)`;
         }
 
         /* 
@@ -35,8 +36,15 @@
         можете также добавить какой-нибудь коэффициент, чтобы подобрать желаемую скорость
         заполнения прогресс-бара.
         */
-        
 
+        for (var i = 0; i <= 100; i++) {
+            setTimeout((function (index) {
+                return function () {
+                    changeProgress(index)
+                };
+            })(i), 1000 * (i + 1))
+        }
+        
     </script>
 </body>
 
