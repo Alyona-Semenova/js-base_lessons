@@ -19,7 +19,14 @@
     -->
 
     <script>
-        
+        let span = document.querySelector("span");
+        let fromEl = document.getElementById("from");
+
+        fromEl.addEventListener("change", (event) => {
+            span.textContent = event.target.value;
+            console.log(span)
+        });
+
     </script>
 </body>
 </html>
